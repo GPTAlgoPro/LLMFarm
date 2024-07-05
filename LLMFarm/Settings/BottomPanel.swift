@@ -54,10 +54,3 @@ struct BottomPanelView: View {
             
     }
 }
-
-
-//struct BottomPanelView_Previews: PreviewProvider {
-//    static var previews: some View {
-//        BottomPanelView(tabIndex: .constant(0),current_detail_view_name: .constant("Chat"))
-//    }
-//}

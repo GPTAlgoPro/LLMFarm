@@ -253,9 +253,3 @@ struct ChatView: View {
         }
     }
 }
-
-//struct ChatView_Previews: PreviewProvider {
-//    static var previews: some View {
-//        ChatView(chat_selected: .constant(true),model_name: .constant(""),chat_name:.constant(""),title: .constant("Title"),close_chat: {},add_chat_dialog:.constant(false),edit_chat_dialog:.constant(false))
-//    }
-//}

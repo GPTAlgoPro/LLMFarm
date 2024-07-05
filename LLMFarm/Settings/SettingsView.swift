@@ -58,23 +58,25 @@ struct SettingsView: View {
                     .listStyle(InsetListStyle())
                 }
                 
+                Divider()
                 VStack{
                     HStack{
-                        Image("ava0_48")
-                            .foregroundColor(.secondary)
+                        Image("llama_cute")
+                            .resizable()
                             .font(.system(size: 40))
+                            .frame(width: 72, height: 72)
+                            .cornerRadius(9)
                     }
                     .buttonStyle(.borderless)
                     .controlSize(.large)
-                    Text("LLMFarm v\(app_version)\nAuthor Artem Savkin\n2024")
+                    Divider()
+                    Text("大模型农场 v\(app_version)\n作者：孙凯（基于LLFarm）, 2024-7-4")
+//                        .foregroundColor(.accentColor)
                         .font(.footnote)
                         .frame(maxWidth: .infinity)
                         .multilineTextAlignment(.center)
-                    
-                    
-                }.opacity(0.4)
-                    .frame(maxWidth: .infinity,alignment: .center)
-                
+                }
+                .frame(maxWidth: .infinity,alignment: .center)
             }
         }
         .navigationTitle("Settings")

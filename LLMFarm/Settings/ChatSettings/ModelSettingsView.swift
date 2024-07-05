@@ -110,7 +110,3 @@ struct ModelSettingsView: View {
         }
     }
 }
-
-//#Preview {
-//    ModelSettings()
-//}

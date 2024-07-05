@@ -243,9 +243,3 @@ struct FineTuneView: View {
         .disabled(fineTuneModel.state == .cancel)
     }
 }
-
-struct FineTuneView_Previews: PreviewProvider {
-    static var previews: some View {
-        FineTuneView()
-    }
-}

@@ -96,14 +96,3 @@ struct MessageView: View {
         }
     }
 }
-
-struct MessageView_Previews: PreviewProvider {
-    static var previews: some View {
-        VStack {
-            MessageView(message: Message(sender: .user, state: .none, text: "none", tok_sec: 0))
-            MessageView(message: Message(sender: .user, state: .error, text: "error", tok_sec: 0))
-            MessageView(message: Message(sender: .user, state: .predicting, text: "predicting", tok_sec: 0))
-            MessageView(message: Message(sender: .user, state: .predicted(totalSecond: 3.1415), text: "predicted", tok_sec: 0))
-        }
-    }
-}

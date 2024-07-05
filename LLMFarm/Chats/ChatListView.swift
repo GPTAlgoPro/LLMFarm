@@ -87,17 +87,14 @@ struct ChatListView: View {
                     }
                     .onDelete(perform: delete)
                 }
-                
                 .frame(maxHeight: .infinity)
-                //                    .border(Color.red, width: 1)
-                //                    .listStyle(PlainListStyle())
 #if os(macOS)
                 .listStyle(.sidebar)
 #else
                 .listStyle(InsetListStyle())
 #endif
+                
             }
-//            .border(/*@START_MENU_TOKEN@*/Color.black/*@END_MENU_TOKEN@*/)
             .background(.opacity(0))
             
             if chats_previews.count<=0{
@@ -118,10 +115,8 @@ struct ChatListView: View {
                     Text("Start new chat")
                         .font(.title3)
                         .frame(maxWidth: .infinity)
-                    
-                    
-                }.opacity(0.4)
-                    .frame(maxWidth: .infinity,alignment: .center)
+                        .foregroundColor(.accentColor)
+                }.frame(maxWidth: .infinity,alignment: .center)
             }
         }.task {
             after_chat_edit = refresh_chat_list
@@ -186,21 +181,20 @@ struct ChatListView: View {
             }
             
         }
+
+        VStack{
+            HStack{
+                Image("llama_cute")
+                    .resizable()
+                    .foregroundColor(.secondary)
+                    .font(.system(size: 40))
+                    .frame(width: 48, height: 48)
+                    .cornerRadius(8)
+            }
+            Text("大模型农场 v\(Bundle.main.infoDictionary!["CFBundleShortVersionString"] as! String), 2024-7-4\n作者：孙凯（基于LLFarm)")
+                .font(.footnote)
+                .multilineTextAlignment(.center)
+        }
+
     }
 }
-
-
-
-//struct ChatListView_Previews: PreviewProvider {
-//    static var previews: some View {
-//        ChatListView(tabSelection: .constant(1),
-//                     chat_selected: .constant(false),
-//                     model_name: .constant(""),
-//                     chat_name: .constant(""),
-//                     title: .constant(""),
-//                     add_chat_dialog: .constant(false),
-//                     close_chat:{},
-//                     edit_chat_dialog:.constant(false))
-////            .preferredColorScheme(.dark)
-//    }
-//}

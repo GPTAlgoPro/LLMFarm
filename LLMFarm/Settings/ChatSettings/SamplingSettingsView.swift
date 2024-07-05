@@ -215,7 +215,3 @@ struct SamplingSettingsView: View {
         }
     }
 }
-
-//#Preview {
-//    SamplingSettingsView()
-//}

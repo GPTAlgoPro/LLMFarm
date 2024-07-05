@@ -525,10 +525,3 @@ struct AddChatView: View {
         skip_tokens
     ]}
 }
-//
-//struct AddChatView_Previews: PreviewProvider {
-//    static var previews: some View {
-//        AddChatView(add_chat_dialog: .constant(true),edit_chat_dialog:.constant(false),renew_chat_list: .constant({}))
-//            .preferredColorScheme(.dark)
-//    }
-//}

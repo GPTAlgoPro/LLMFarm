@@ -178,9 +178,3 @@ struct ExportLoraView: View {
         .disabled(fineTuneModel.state == .cancel)
     }
 }
-
-struct ExportLoraView_Previews: PreviewProvider {
-    static var previews: some View {
-        ExportLoraView()
-    }
-}
