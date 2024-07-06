@@ -182,19 +182,33 @@ struct ChatListView: View {
             
         }
 
+        Spacer()
         VStack{
+            Divider()
             HStack{
                 Image("llama_cute")
                     .resizable()
                     .foregroundColor(.secondary)
                     .font(.system(size: 40))
-                    .frame(width: 48, height: 48)
-                    .cornerRadius(8)
+                    .frame(width: 72, height: 72)
+                    .cornerRadius(12)
             }
-            Text("大模型农场 v\(Bundle.main.infoDictionary!["CFBundleShortVersionString"] as! String), 2024-7-4\n作者：孙凯（基于LLFarm)")
-                .font(.footnote)
+            VStack {
+                Text("大模型农场 v\(Bundle.main.infoDictionary!["CFBundleShortVersionString"] as! String), 2024-7-4")
+                    .font(.footnote)
+                    .multilineTextAlignment(.center)
+                
+                HStack(spacing: 0) {
+                    Text("作者：孙凯（基于")
+                        .font(.footnote)
+                    Link("LLMFarm", destination: URL(string: "https://github.com/guinmoon/LLMFarm")!)
+                        .font(.footnote)
+                    Text("）")
+                        .font(.footnote)
+                }
                 .multilineTextAlignment(.center)
+            }
+            Divider()
         }
-
     }
 }

@@ -19,13 +19,25 @@ struct MessageView: View {
         var body: some View {
             switch sender {
             case .user:
-                Text("You")
-                    .font(.caption)
-                    .foregroundColor(.accentColor)
+                HStack{
+                    Image("sk")
+                        .resizable()
+                        .frame(width: 32, height: 32)
+                        .cornerRadius(6)
+                    Text("You")
+                        .font(.caption)
+                        .foregroundColor(.accentColor)
+                }
             case .system:
-                Text(current_model)
-                    .font(.caption)
-                    .foregroundColor(.accentColor)
+                HStack{
+                    Image("ava0")
+                        .resizable()
+                        .frame(width: 32, height: 32)
+                        .cornerRadius(6)
+                    Text("Bot")
+                        .font(.caption)
+                        .foregroundColor(.accentColor)
+                }
             }
         }
     }
@@ -67,7 +79,23 @@ struct MessageView: View {
                 VStack(alignment: .leading) {
 //                    Text(LocalizedStringKey(message.text)).textSelection(.enabled)
                     Markdown(message.text)
-                        .markdownTheme(.docC)
+                        .markdownBlockStyle(\.codeBlock) { label in
+                            ScrollView(.vertical) {
+                                label
+                                  .relativeLineSpacing(.em(0.25))
+                                  .markdownTextStyle {
+                                    FontFamilyVariant(.monospaced)
+                                    FontSize(.em(0.85))
+                                      ForegroundColor(.green)
+                                  }
+                                  .padding()
+                              }
+                            .background(Color(.black))
+                              .clipShape(RoundedRectangle(cornerRadius: 10))
+                              .markdownMargin(top: .zero, bottom: .em(0.8))
+                            }
+                        .textSelection(.enabled)
+//                        .markdownTheme(.docC)
                     Text(String(format: "%.2f ses, %.2f t/s", totalSecond,message.tok_sec))
                         .font(.footnote)
                         .foregroundColor(Color.gray)

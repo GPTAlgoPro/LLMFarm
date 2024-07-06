@@ -84,7 +84,7 @@ struct ChatView: View {
             return
         }
                 
-        print(chat_selection)
+        print(chat_selection ?? (Any).self)
         print("\nreload\n")
         aiChatModel.reload_chat(chat_selection!)
 //         aiChatModel.stop_predict()

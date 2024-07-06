@@ -70,11 +70,21 @@ struct SettingsView: View {
                     .buttonStyle(.borderless)
                     .controlSize(.large)
                     Divider()
-                    Text("大模型农场 v\(app_version)\n作者：孙凯（基于LLFarm）, 2024-7-4")
-//                        .foregroundColor(.accentColor)
-                        .font(.footnote)
-                        .frame(maxWidth: .infinity)
+                    VStack {
+                        Text("大模型农场 v\(Bundle.main.infoDictionary!["CFBundleShortVersionString"] as! String), 2024-7-4")
+                            .font(.footnote)
+                            .multilineTextAlignment(.center)
+                        
+                        HStack(spacing: 0) {
+                            Text("作者：孙凯（基于")
+                                .font(.footnote)
+                            Link("LLMFarm", destination: URL(string: "https://github.com/guinmoon/LLMFarm")!)
+                                .font(.footnote)
+                            Text("）")
+                                .font(.footnote)
+                        }
                         .multilineTextAlignment(.center)
+                    }
                 }
                 .frame(maxWidth: .infinity,alignment: .center)
             }
